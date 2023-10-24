@@ -22,11 +22,9 @@ void displayPrompt() {
         memmove(current_dir, "~", 1);
         memmove(current_dir + 1, current_dir + strlen(home_dir), strlen(current_dir) - strlen(home_dir) + 1);
     }
-    printf("------------------"
-        "------------------------\n"); 
+    printf("------------------------------------------\n"); 
     printf("\n\t     C SHELL"); 
     printf("\n\n\t-OSA Assignment 3-"); 
-    printf("\n\n-------------------"
-        "-----------------------\n\n");
-    printf("<%s@%s:%s>\n", username, system_name, current_dir);
+    printf("\n\n------------------------------------------\n\n");
+    printf("<%s@%s:%s>", username, system_name, current_dir);
 }
