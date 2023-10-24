@@ -5,9 +5,20 @@
 
 int main() {
     displayPrompt();
-    char* input = readInput();
-    // printf("%s", input);
-    char **tokens = tokenizeInput(input);
-    // printf("%s\n", tokens[0]);
+    char* input = NULL;
+    while(1){
+        input = readInput();
+   
+        char **tokens = tokenizeInput(input);
+        int numoftokens = 0;
+        while(tokens[numoftokens] != NULL) {
+            numoftokens++;
+        }
+        // printf("Number of tokens: %d\n", numoftokens);
+        execute(tokens, numoftokens);
+     
+        free(tokens); // Free allocated memory
+        free(input);  // Free allocated memory
+    }
     return 0;
 }
