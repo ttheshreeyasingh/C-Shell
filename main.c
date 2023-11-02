@@ -20,7 +20,7 @@ int main() {
             numoftokens++;
         }
         // printf("Number of tokens: %d\n", numoftokens);
-        execute(tokens, numoftokens);
+        execute(tokens, numoftokens, input);
      
         free(tokens); // Free allocated memory
         free(input);  // Free allocated memory

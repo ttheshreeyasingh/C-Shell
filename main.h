@@ -4,6 +4,6 @@
 void displayPrompt();
 char* readInput();
 char** tokenizeInput(char* input);
-void execute(char** tokens, int numoftokens);
+void execute(char** tokens, int numoftokens, char* input);
 
 #endif
