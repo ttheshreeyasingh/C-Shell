@@ -4,9 +4,14 @@
 #include <stdlib.h>
 
 int main() {
-    displayPrompt();
+    // displayPrompt();
+    printf("------------------------------------------\n"); 
+    printf("\n\t     C SHELL"); 
+    printf("\n\n\t-OSA Assignment 3-"); 
+    printf("\n\n------------------------------------------\n\n");
     char* input = NULL;
     while(1){
+        displayPrompt();
         input = readInput();
    
         char **tokens = tokenizeInput(input);

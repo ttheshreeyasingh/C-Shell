@@ -4,8 +4,13 @@
 #include <stdlib.h>
 #include <pwd.h>
 #include <string.h>
+#define GREEN "\033[0;32m"
+#define YELLOW "\033[0;33m"
+#define CYAN "\033[0;36m"
+#define RESET "\033[0m"
 
 void displayPrompt() {
+    
     char *username = getpwuid(getuid())->pw_name;
     char system_name[256];
     gethostname(system_name, sizeof(system_name));
@@ -22,9 +27,6 @@ void displayPrompt() {
         memmove(current_dir, "~", 1);
         memmove(current_dir + 1, current_dir + strlen(home_dir), strlen(current_dir) - strlen(home_dir) + 1);
     }
-    printf("------------------------------------------\n"); 
-    printf("\n\t     C SHELL"); 
-    printf("\n\n\t-OSA Assignment 3-"); 
-    printf("\n\n------------------------------------------\n\n");
-    printf("<%s@%s:%s>", username, system_name, current_dir);
+   
+    printf("<" CYAN "%s" RESET "@" YELLOW "%s" RESET ":" GREEN"%s" RESET ">" , username, system_name, current_dir);
 }

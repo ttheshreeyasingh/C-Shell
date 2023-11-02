@@ -6,8 +6,13 @@
 #include <string.h>
 
 void echo(char** tokens){
-        for(int i = 1; tokens[i] != NULL; i++) {
-            printf("%s ", tokens[i]);
-        }
-        printf("\n");
+    int i = 1;
+    while (tokens[i] != NULL)
+    {
+        printf("%s", tokens[i]);
+        i++;
+        if (tokens[i] != NULL)
+            printf(" ");
+    }
+    printf("\n");
 }
