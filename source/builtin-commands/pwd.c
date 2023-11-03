@@ -1,9 +1,5 @@
 #include "func.h"
 #include "../../main.h"
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <string.h>
 
 void pwd(){
         char current_dir[256];

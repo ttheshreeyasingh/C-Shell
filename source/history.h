@@ -1,6 +1,11 @@
 #ifndef HISTORY_H
 #define HISTORY_H
 #include <time.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
 // Define a structure to hold command history
 typedef struct CommandHistory {
     char command[256];

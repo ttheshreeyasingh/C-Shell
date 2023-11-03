@@ -1,12 +1,35 @@
-#include "../main.h"
 #include "history.h"
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <string.h>
-#include <ctype.h>
 
 int numCommandsStored = 0;
+
+void saveHistoryToFile(CommandHistory storedHistory[20]) {
+    FILE* file = fopen("history.txt", "w");
+    if (file == NULL) {
+        perror("Error opening history file");
+        return;
+    }
+
+    for (int i = 0; i < numCommandsStored; i++) {
+        fprintf(file, "%s\n", storedHistory[i].command);
+    }
+
+    fclose(file);
+}
+
+void loadHistoryFromFile(CommandHistory storedHistory[20]) {
+    FILE* file = fopen("history.txt", "r");
+    if (file == NULL) {
+        perror("Error opening history file");
+        return;
+    }
+
+    numCommandsStored = 0;
+    while (fscanf(file, "%255s\n", storedHistory[numCommandsStored].command) == 1) {
+        numCommandsStored++;
+    }
+
+    fclose(file);
+}
 
 void history(int displayCount, CommandHistory storedHistory[20]) {
     for (int i = numCommandsStored - displayCount; i < numCommandsStored; i++) {

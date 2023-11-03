@@ -1,10 +1,14 @@
 #include "main.h"
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-
+char *home = NULL;
+int len = 0;
 int main() {
-    // displayPrompt();
+    char *current_dir = getcwd(NULL, 0);
+    if (home == NULL){
+        len = strlen(current_dir);
+        home = malloc(sizeof(char) * len);
+        strcpy(home, current_dir);
+    }
+
     printf("------------------------------------------\n"); 
     printf("\n\t     C SHELL"); 
     printf("\n\n\t-OSA Assignment 3-"); 
@@ -19,7 +23,6 @@ int main() {
         while(tokens[numoftokens] != NULL) {
             numoftokens++;
         }
-        // printf("Number of tokens: %d\n", numoftokens);
         execute(tokens, numoftokens, input);
      
         free(tokens); // Free allocated memory

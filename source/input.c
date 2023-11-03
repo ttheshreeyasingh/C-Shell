@@ -1,11 +1,4 @@
-#include "../main.h"
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <string.h>
-#include <ctype.h>
-
-#define TOKEN_BUFSIZE 64
+#include "input.h"
 
 void trim(char* str) {
     int start = 0, end = strlen(str) - 1;

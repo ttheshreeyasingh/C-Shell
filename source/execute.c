@@ -1,10 +1,4 @@
-#include "../main.h"
-#include "./builtin-commands/func.h"
-#include "history.h"
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <string.h>
+#include "execute.h"
 
 void execute(char** tokens, int numoftokens, char* input) {
     if(numoftokens == 0 || tokens[0] == NULL) return;
@@ -25,5 +19,8 @@ void execute(char** tokens, int numoftokens, char* input) {
             }
         }
         history(displayCount, storedHistory);
+    }
+    else{
+        perror(RED "Command not found\n" RESET);
     }
 }
