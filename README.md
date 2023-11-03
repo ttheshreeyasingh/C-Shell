@@ -1,4 +1,5 @@
 # C-Shell
+![Overview](./Docs/img.png)
 
 ## Description
 
@@ -18,18 +19,20 @@ make && ./cshell
 
 ## Files and Directories
 
-- `main.c` and `main.h`: Contains the main logic of the shell, including the command execution loop.
-- `display.c` and `display.h`: Implement the display functions for the shell prompt.
-- `execute.c` and `execute.h`: Handles the execution of commands like `cd`, `echo`, `pwd`, `history` and `exit`.
-- `input.c` and `input.h`: Handle reading user input and tokenizing it.
-- `history.c` and `history.h`: Provide a command history feature that can store up to 20 commands across sessions. 
-- `builtin-commands/`: Directory containing the implementation of built-in commands (`cd.c`, `echo.c`, `pwd.c`, and `func.h` for header files).
-- `history.txt`: File used to store command history across sessions (automatically created if not present).
-- `makefile`: Makefile for building the project.
+- [`main.c`](main.c) and [`main.h`](main.h): Contains the main logic of the shell, including the command execution loop.
+- [`display.c`](display.c) and [`display.h`](display.h): Implement the display functions for the shell prompt.
+- [`execute.c`](execute.c) and [`execute.h`](execute.h): Handles the execution of commands like `cd`, `echo`, `pwd`, `history` and `exit`.
+- [`input.c`](input.c) and [`input.h`](input.h): Handle reading user input and tokenizing it.
+- [`history.c`](history.c) and [`history.h`](history.h): Provide a command history feature that can store up to 20 commands across sessions. 
+- `builtin-commands/`: Directory containing the implementation of built-in commands ([cd.c](builtin-commands/cd.c)
+, [echo.c](builtin-commands/echo.c), [pwd.c](builtin-commands/pwd.c) , and [func.h](builtin-commands/func.h) for header files).
+- [`history.txt`](history.txt): File used to store command history across sessions (automatically created if not present).
+- [`makefile`](makefile): Makefile for building the project.
 
 ## Built-in Commands
 
 ### CD
+
 The `cd` command allows the user to change the current working directory. It supports the following options:
 
 - `cd`: Go to the home directory.
@@ -51,7 +54,7 @@ The `history` command displays the command history. By default, it shows the las
 > Handling Repeated Commands and Persistence of History
 
 ## Error Handling
-The code uses `perror.h` to handle errors appropriately. If a command cannot be executed or returns an error, it is handled accordingly.
+The code uses [`perror.h`](https://man7.org/linux/man-pages/man3/perror.3.html) to handle errors appropriately. If a command cannot be executed or returns an error, it is handled accordingly.
 Also has customised error messages for invalid commands in RED color.
 
 ## Modular Structure
