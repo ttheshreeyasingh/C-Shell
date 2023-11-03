@@ -19,7 +19,10 @@ void cd(char** tokens) {
         // Move up one level in the directory hierarchy
         strcpy(prev_dir, getcwd(NULL, 0)); // Store current directory
         chdir("..");
-    } else if (strcmp(tokens[1], "-") == 0) {
+    }  else if (strcmp(tokens[1], ".") == 0) {
+        strcpy(prev_dir, getcwd(NULL, 0)); // Store current directory
+        ; // Do nothing
+    }  else if (strcmp(tokens[1], "-") == 0) {
         // Move to the previous directory
         if (prev_dir[0] != '\0') {
             printf("%s\n", prev_dir);

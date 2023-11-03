@@ -1,7 +1,7 @@
 #ifndef FUNC_H
 #define FUNC_H
 
-void echo(char** tokens, char* input);
+void echo(char**, char*);
 void pwd();
-void cd(char** tokens);
+void cd(char**);
 #endif
