@@ -19,7 +19,13 @@ void saveHistoryToFile(CommandHistory storedHistory[20]) {
 void loadHistoryFromFile(CommandHistory storedHistory[20]) {
     FILE* file = fopen("history.txt", "r");
     if (file == NULL) {
-        perror("Error opening history file");
+        // File doesn't exist, create it
+        file = fopen("history.txt", "w");
+        if (file == NULL) {
+            perror("Error creating history file");
+            return;
+        }
+        fclose(file);
         return;
     }
 
@@ -30,6 +36,7 @@ void loadHistoryFromFile(CommandHistory storedHistory[20]) {
 
     fclose(file);
 }
+
 
 void history(int displayCount, CommandHistory storedHistory[20]) {
     for (int i = numCommandsStored - displayCount; i < numCommandsStored; i++) {

@@ -11,7 +11,7 @@
 #define RESET "\033[0m"
 
 
-
+void saveHistoryToFile(CommandHistory[20]);
 void execute(char**, int, char*);
 
 #endif

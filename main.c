@@ -1,7 +1,9 @@
 #include "main.h"
+
 char *home = NULL;
 int len = 0;
 int main() {
+    loadHistoryFromFile(storedHistory);
     char *current_dir = getcwd(NULL, 0);
     if (home == NULL){
         len = strlen(current_dir);

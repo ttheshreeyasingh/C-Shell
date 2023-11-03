@@ -1,0 +1,12 @@
+exit
+pwd
+cd
+pwd
+echo
+cd
+pwd
+history
+exit
+pwd
+history
+exit
