@@ -48,7 +48,7 @@ The `pwd` command prints the absolute pathname of the current working directory.
 ### HISTORY
 The `history` command displays the command history. By default, it shows the last 10 commands, but you can specify a different count. It also stores up to 20 commands across sessions, overwriting the oldest commands if the limit is exceeded. Identical consecutive commands are not stored.
 
-> Handling  Handling Repeated Commands and Persistence of History
+> Handling Repeated Commands and Persistence of History
 
 ## Error Handling
 The code uses `perror.h` to handle errors appropriately. If a command cannot be executed or returns an error, it is handled accordingly.
